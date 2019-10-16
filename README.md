@@ -1,5 +1,5 @@
 # FlappyBird
-<br>
+
 🐦Student Project to present during workshops🐦
 -------------------------------------------
 🤏Tapping screen allows bird to fly</br>
