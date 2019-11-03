@@ -102,7 +102,7 @@ public class GameView extends View {
         int maxBirdY = bird[0].getHeight();
         int minBirdY = canvasHeight - bird[0].getHeight() * 5;
 
-      birdY += birdHigh;
+        birdY += birdHigh;
 
         if (birdY < maxBirdY) birdY = maxBirdY;
         if (birdY > minBirdY) birdY = minBirdY;
@@ -119,90 +119,90 @@ public class GameView extends View {
         //::____________________point to collect____________________::
         coinX -= coinSpeed; // make coin fly left
 
+//
+//        if (hitCheck(coinX, coinY)) {
+//            score++; incrementation++;
+//            coinX = -100; // it 'disappears'
+//
+//        }
+//        if (coinX < 0) {
+//            coinX = canvasWidth + 20;
+//            coinY = (int) Math.floor(Math.random() * (maxBirdY - minBirdY)) + minBirdY;
+//        }
+//
+//        //::______________________level up___________________________::
+//        if (incrementation % 5 == 0 && incrementation != 0) {
+//
+//            ++level;
+//            coinSpeed += 2;
+//            deadBallSpeed += 5;
+//            incrementation= 0;
+//        }
+//
+//            canvas.drawBitmap(coin,coinX, coinY, null);
+//
+//            //DeadBall draw
+//            deadBallX-=deadBallSpeed;
+//
+//            if(hitCheck(deadBallX, deadBallY)){
+//
+//                deadBallX= -100; // it 'disappears' -life
+//                lifeCount--;
+//
+//                if (lifeCount==0){
+//                   //GAME OVER
+//                 tryAgain();
+//
+//                }
+//             }
+//             if(deadBallX<0){
+//                 deadBallX=canvasWidth +200;
+//                 deadBallY = (int) Math.floor(Math.random()*(maxBirdY-minBirdY)) + minBirdY;
+//             }
+//
+//            canvas.drawCircle(deadBallX,deadBallY,40, deadBallPaint);
+//
+//             //Score
+//            canvas.drawText("Score : " + score , 20, 60, scorePaint);
+//
+//            //Level
+//            canvas.drawText("Lv. " + level , canvasWidth / 2, 60, levelPaint);
+//
+//            //Life
+//            for(int i=0;i<3;i++){
+//                int x=(int) (800 + life[0].getWidth() * 1.5 * i);
+//                        int y =20;
+//
+//                canvas.drawBitmap( (i < lifeCount )?  life[0]: life[1] ,
+//                        x, y, null);
+//            }
+//
+//        }
+//
+//        public boolean hitCheck(int x, int y){
+//            return (birdX<x && x <(birdX + bird[0].getWidth() )&& ( birdY<y && y < (birdY + bird[0].getHeight())));
+//        }
+//
+//    public static int getScore(){
+//        return score;
+//    }
+//
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event){
+//        if(event.getAction() == MotionEvent.ACTION_DOWN){
+//            onTouchFlag =true;
+//            birdHigh= -20; //bird goes up
+//        }
+//        return true;
+//    }
+//    public void tryAgain(){
+//
+//        Intent intent = new Intent(getContext(),ResultActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        getContext().startActivity(intent);
+//    }
+//
 
-        if (hitCheck(coinX, coinY)) {
-            score++; incrementation++;
-            coinX = -100; // it 'disappears'
-
-        }
-        if (coinX < 0) {
-            coinX = canvasWidth + 20;
-            coinY = (int) Math.floor(Math.random() * (maxBirdY - minBirdY)) + minBirdY;
-        }
-
-        //::______________________level up___________________________::
-        if (incrementation % 5 == 0 && incrementation != 0) {
-
-            ++level;
-            coinSpeed += 2;
-            deadBallSpeed += 5;
-            incrementation= 0;
-        }
-
-            canvas.drawBitmap(coin,coinX, coinY, null);
-
-            //DeadBall draw
-            deadBallX-=deadBallSpeed;
-
-            if(hitCheck(deadBallX, deadBallY)){
-
-                deadBallX= -100; // it 'disappears' -life
-                lifeCount--;
-
-                if (lifeCount==0){
-                   //GAME OVER
-                 tryAgain();
-
-                }
-             }
-             if(deadBallX<0){
-                 deadBallX=canvasWidth +200;
-                 deadBallY = (int) Math.floor(Math.random()*(maxBirdY-minBirdY)) + minBirdY;
-             }
-
-            canvas.drawCircle(deadBallX,deadBallY,40, deadBallPaint);
-
-             //Score
-            canvas.drawText("Score : " + score , 20, 60, scorePaint);
-
-            //Level
-            canvas.drawText("Lv. " + level , canvasWidth / 2, 60, levelPaint);
-
-            //Life
-            for(int i=0;i<3;i++){
-                int x=(int) (800 + life[0].getWidth() * 1.5 * i);
-                        int y =20;
-
-                canvas.drawBitmap( (i < lifeCount )?  life[0]: life[1] ,
-                        x, y, null);
-            }
-
-        }
-
-        public boolean hitCheck(int x, int y){
-            return (birdX<x && x <(birdX + bird[0].getWidth() )&& ( birdY<y && y < (birdY + bird[0].getHeight())));
-        }
-
-    public static int getScore(){
-        return score;
-    }
-
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event){
-        if(event.getAction() == MotionEvent.ACTION_DOWN){
-            onTouchFlag =true;
-            birdHigh= -20; //bird goes up
-        }
-        return true;
-    }
-    public void tryAgain(){
-
-        Intent intent = new Intent(getContext(),ResultActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        getContext().startActivity(intent);
-    }
-
-
-}
+//}
 
