@@ -21,29 +21,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-//
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event){
-//        if(event.getAction() == MotionEvent.ACTION_DOWN){
-//
-//            gameView = new GameView(this);
-//            setContentView(gameView);
-//
-//            Timer timer = new Timer();
-//            timer.schedule(new TimerTask() {
-//                @Override
-//                public void run() {
-//                    handler.post(new Runnable() {
-//                        @Override
-//                        public void run() { gameView.invalidate();
-//
-//                        }
-//                    });
-//                }
-//            },0,TIMER_INTERVAL);
-//
-//        }
-//        return true;
-//    }
 
+   @Override
+    public boolean onTouchEvent(MotionEvent event){
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+
+           gameView = new GameView(this);
+            setContentView(gameView);
+
+            Timer timer = new Timer();
+           timer.schedule(new TimerTask() {
+               @Override
+                public void run() {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() { gameView.invalidate();
+
+                        }
+                    });
+                }
+            },0,TIMER_INTERVAL);
+
+        }
+        return true;
+   }
 }
