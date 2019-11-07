@@ -51,7 +51,6 @@ public class GameView extends View {
     public GameView(Context context) {
         super(context);
 
-
         bird[0] = BitmapFactory.decodeResource(getResources(), R.drawable.bird1);
         bird[1] = BitmapFactory.decodeResource(getResources(), R.drawable.bird2);
 
@@ -119,16 +118,15 @@ public class GameView extends View {
         //::____________________point to collect____________________::
         coinX -= coinSpeed; // make coin fly left
 
-//
-//        if (hitCheck(coinX, coinY)) {
-//            score++; incrementation++;
-//            coinX = -100; // it 'disappears'
-//
-//        }
-//        if (coinX < 0) {
-//            coinX = canvasWidth + 20;
-//            coinY = (int) Math.floor(Math.random() * (maxBirdY - minBirdY)) + minBirdY;
-//        }
+
+     if (hitCheck(coinX, coinY)) {
+            score++; incrementation++;
+           coinX = -100; // it 'disappears'
+      }
+        if (coinX < 0) {
+            coinX = canvasWidth + 20;
+           coinY = (int) Math.floor(Math.random() * (maxBirdY - minBirdY)) + minBirdY;
+        }
 //
 //        //::______________________level up___________________________::
 //        if (incrementation % 5 == 0 && incrementation != 0) {
@@ -139,28 +137,27 @@ public class GameView extends View {
 //            incrementation= 0;
 //        }
 //
-//            canvas.drawBitmap(coin,coinX, coinY, null);
+            canvas.drawBitmap(coin,coinX, coinY, null);
 //
-//            //DeadBall draw
-//            deadBallX-=deadBallSpeed;
-//
-//            if(hitCheck(deadBallX, deadBallY)){
-//
-//                deadBallX= -100; // it 'disappears' -life
-//                lifeCount--;
-//
-//                if (lifeCount==0){
-//                   //GAME OVER
-//                 tryAgain();
-//
-//                }
-//             }
-//             if(deadBallX<0){
-//                 deadBallX=canvasWidth +200;
-//                 deadBallY = (int) Math.floor(Math.random()*(maxBirdY-minBirdY)) + minBirdY;
-//             }
-//
-//            canvas.drawCircle(deadBallX,deadBallY,40, deadBallPaint);
+            //DeadBall draw
+          deadBallX-=deadBallSpeed;
+
+            if(hitCheck(deadBallX, deadBallY)){
+
+                deadBallX= -100; // it 'disappears' -life
+                lifeCount--;
+
+               if (lifeCount==0){
+                  //GAME OVER
+                tryAgain();
+                }
+            }
+            if(deadBallX<0){
+                 deadBallX=canvasWidth +200;
+                 deadBallY = (int) Math.floor(Math.random()*(maxBirdY-minBirdY)) + minBirdY;
+            }
+
+            canvas.drawCircle(deadBallX,deadBallY,40, deadBallPaint);
 //
 //             //Score
 //            canvas.drawText("Score : " + score , 20, 60, scorePaint);

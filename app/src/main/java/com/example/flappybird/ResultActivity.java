@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class ResultActivity extends AppCompatActivity {
 
     @Override
-   protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 //
@@ -39,10 +39,7 @@ public class ResultActivity extends AppCompatActivity {
 //        else{
 //            highScoreLabel.setText("High Score: "  + highScore);
 //        }
-//
-//
-//
-//
+
 //        tryAgainButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -51,5 +48,5 @@ public class ResultActivity extends AppCompatActivity {
 //            }
 //
 //        });
-//    }
-//}
+    }
+}
